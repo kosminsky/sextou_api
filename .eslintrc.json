@@ -1,0 +1,85 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "default-case": [
+      "error"
+    ],
+    "getter-return": [
+      "error"
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always"
+    ],
+    "newline-per-chained-call": [
+      "error"
+    ],
+    "no-const-assign": [
+      "error"
+    ],
+    "no-dupe-args": [
+      "error"
+    ],
+    "no-dupe-class-members": [
+      "error"
+    ],
+    "no-dupe-keys": [
+      "error"
+    ],
+    "no-duplicate-imports": [
+      "error"
+    ],
+    "no-self-assign": [
+      "error"
+    ],
+    "no-self-compare": [
+      "error"
+    ],
+    "no-unused-vars": [
+      "error"
+    ],
+    "no-use-before-define": [
+      "error"
+    ],
+    "prefer-const": [
+      "error"
+    ],
+    "prefer-template": [
+      "error"
+    ],
+    "require-await": [
+      "error"
+    ]
+  }
+}
