@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import BancoDeDados from './banco_de_dados';
 
 class App {
 
@@ -10,22 +11,22 @@ class App {
   }
 
   public iniciar(): void {
-    this.addMiddlewares();
-    this.configDataBase();
-    this.addRoutes();
+    this.adicionaMiddlewares();
+    this.configuraBancoDeDados();
+    this.adicionaRotas();
     this.app.listen(3000);
   }
 
-  private addMiddlewares(): void {
+  private adicionaMiddlewares(): void {
     this.app.use(express.json());
     this.app.use(cors());
   }
 
-  private configDataBase(): void {
-
+  private configuraBancoDeDados(): void {
+    BancoDeDados.conectar();
   }
 
-  private addRoutes(): void {
+  private adicionaRotas(): void {
 
   }
 }
