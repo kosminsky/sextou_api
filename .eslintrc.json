@@ -11,7 +11,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@eslint-plugin-typescript/parser",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
@@ -67,7 +67,7 @@
       "error"
     ],
     "no-unused-vars": [
-      "error"
+      "never"
     ],
     "no-use-before-define": [
       "error"

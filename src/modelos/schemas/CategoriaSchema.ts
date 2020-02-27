@@ -8,7 +8,18 @@ export interface ICategoria extends Document {
 
 const CategoriaSchema: Schema = new Schema(
 	{
-
+		nome: {
+			type: String,
+			required: true,
+		},
+		descricao: {
+			type: String,
+			required: true,
+		},
+		descricao_curta: {
+			type: String,
+			required: true,
+		},
 	},
 	{
 		timestamps: true,

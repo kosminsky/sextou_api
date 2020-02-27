@@ -12,7 +12,31 @@ interface IEditor extends Document {
 
 const EditorScheema: Schema = new Schema(
 	{
-
+		casas: [{
+			type: Schema.Types.ObjectId,
+			ref: 'Casa',
+		}],
+		nome: {
+			type: String,
+			required: true,
+		},
+		email: {
+			type: String,
+			required: true,
+			unique: true,
+		},
+		senha: {
+			type: String,
+			required: true,
+		},
+		idade: {
+			type: String,
+			required: true,
+		},
+		genero: {
+			type: String,
+			required: true,
+		},
 	},
 	{
 		timestamps: true,

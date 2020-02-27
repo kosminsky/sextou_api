@@ -14,7 +14,35 @@ export interface IUsuario extends Document {
 
 const UsuarioSchema: Schema = new Schema(
 	{
-
+		eventos_agendados: [{
+			type: Schema.Types.ObjectId,
+			ref: 'Evento',
+		}],
+		casas_favoritas: [{
+			type: Schema.Types.ObjectId,
+			ref: 'Casa',
+		}],
+		nome: {
+			type: String,
+			required: true,
+		},
+		email: {
+			type: String,
+			required: true,
+			unique: true,
+		},
+		senha: {
+			type: String,
+			required: true,
+		},
+		idade: {
+			type: String,
+			required: true,
+		},
+		genero: {
+			type: String,
+			required: true,
+		},
 	},
 	{
 		timestamps: true,

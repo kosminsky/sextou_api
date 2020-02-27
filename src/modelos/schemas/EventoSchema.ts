@@ -1,9 +1,10 @@
 import { Schema, model, Document } from 'mongoose';
 import { ICategoria } from './CategoriaSchema';
-import { IFoto } from './FotoSchema';
+import FotoSchema, { IFoto } from './FotoSchema';
+import { ICasa } from './CasaSchema';
 
 export interface IEvento extends Document {
-	casa: String,
+	casa: [ICasa['_id']],
 	categorias: [ICategoria['_id']],
 	nome: String,
 	data: Date,
@@ -15,7 +16,30 @@ export interface IEvento extends Document {
 
 const EventoScheema: Schema = new Schema(
 	{
-
+		casa: {
+			type: Schema.Types.ObjectId,
+			ref: 'Casa',
+		},
+		categorias: [{
+			type: Schema.Types.ObjectId,
+			ref: 'Categoria',
+		}],
+		nome: {
+			type: String,
+			required: true,
+		},
+		data: Date,
+		descricao: {
+			type: String,
+			required: true,
+		},
+		descricao_curta: {
+			type: String,
+		},
+		foto_principal: {
+			type: FotoSchema,
+		},
+		fotos: [FotoSchema],
 	},
 	{
 		timestamps: true,

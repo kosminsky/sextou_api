@@ -1,7 +1,7 @@
 import { model, Schema, Document } from 'mongoose';
 import { IEvento } from './EventoSchema';
-import { IEndereco } from './EnderecoSchema';
-import { IFoto } from './FotoSchema';
+import EnderecoSchema, { IEndereco } from './EnderecoSchema';
+import FotoSchema, { IFoto } from './FotoSchema';
 
 export interface ICasa extends Document {
 	eventos: [IEvento['_id']],
@@ -15,7 +15,29 @@ export interface ICasa extends Document {
 
 const CasaSchema: Schema = new Schema(
 	{
-
+		eventos: [{
+			type: Schema.Types.ObjectId,
+			ref: 'Evento',
+		}],
+		nome: {
+			type: String,
+			required: true,
+		},
+		endereco: {
+			type: EnderecoSchema,
+			required: true,
+		},
+		descricao: {
+			type: String,
+			required: true,
+		},
+		descricao_curta: {
+			type: String,
+		},
+		foto_principal: {
+			type: FotoSchema,
+		},
+		fotos: [FotoSchema],
 	},
 	{
 		timestamps: true,

@@ -13,11 +13,18 @@ export interface IEndereco extends Document {
 
 const EnderecoSchema: Schema = new Schema(
 	{
-
+		latitude: String,
+		longitude: String,
+		rua: String,
+		numero: String,
+		complemento: String,
+		bairro: String,
+		cidade: String,
+		estado: String,
 	},
 	{
 		timestamps: true,
 	}
 );
 
-export default model('Endereco', EnderecoSchema);
+export default EnderecoSchema;

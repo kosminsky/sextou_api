@@ -14,4 +14,4 @@ const FotoSchema: Schema = new Schema(
 	}
 );
 
-export default model('Foto', FotoSchema);
+export default FotoSchema;
