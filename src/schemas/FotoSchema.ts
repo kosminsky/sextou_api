@@ -7,7 +7,14 @@ export interface IFoto extends Document {
 
 const FotoSchema: Schema = new Schema(
 	{
-
+    link: {
+      type: String,
+      required: [true, 'o campo foto.link é obrigatorio']
+    },
+  	alt: {
+      type: String,
+      required: [true, 'o campo foto.alt é obrigatorio']
+    },
 	},
 	{
 		timestamps: true,
