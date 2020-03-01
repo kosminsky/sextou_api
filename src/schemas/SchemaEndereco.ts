@@ -1,18 +1,7 @@
-import { model, Schema, Document } from 'mongoose';
+import { Schema } from 'mongoose';
+import IEndereco from '../interfaces/modelos/IEndereco';
 
-export interface IEndereco extends Document {
-  latitude: String,
-  longitude: String,
-  rua: String,
-  numero: String,
-  complemento?: String,
-  cep: String,
-  bairro: String,
-  cidade: String,
-  estado: String,
-}
-
-const EnderecoSchema: Schema = new Schema(
+const EnderecoSchema: Schema<IEndereco> = new Schema(
   {
     latitude: {
       type: String,

@@ -1,19 +1,9 @@
-import { model, Schema, Document } from 'mongoose';
-import { IEvento } from './EventoSchema';
-import EnderecoSchema, { IEndereco } from './EnderecoSchema';
-import FotoSchema, { IFoto } from './FotoSchema';
+import { model, Schema } from 'mongoose';
+import ICasa from '../interfaces/modelos/ICasa';
+import SchemaFoto from '../schemas/ScheemaFoto';
+import EnderecoSchema from '../schemas/SchemaEndereco';
 
-export interface ICasa extends Document {
-	eventos: [IEvento['_id']],
-	nome: String,
-	endereco: IEndereco,
-	descricao: String,
-	descricao_curta?: String,
-	foto_principal?: IFoto,
-	fotos?: [IFoto],
-}
-
-const CasaSchema: Schema = new Schema(
+const Casa: Schema<ICasa> = new Schema(
 	{
 		eventos: [{
 			type: Schema.Types.ObjectId,
@@ -41,13 +31,13 @@ const CasaSchema: Schema = new Schema(
 			maxlength: [140, 'O campo descrição deve ter no maximo 140 caracteres'],
 		},
 		foto_principal: {
-			type: FotoSchema,
+			type: SchemaFoto,
 		},
-		fotos: [FotoSchema],
+		fotos: [SchemaFoto],
 	},
 	{
 		timestamps: true,
 	}
 );
 
-export default model('Casa', CasaSchema);
+export default model<ICasa>('Casa', Casa);

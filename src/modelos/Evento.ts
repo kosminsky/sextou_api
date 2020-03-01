@@ -1,20 +1,8 @@
-import { Schema, model, Document } from 'mongoose';
-import { ICategoria } from './CategoriaSchema';
-import FotoSchema, { IFoto } from './FotoSchema';
-import { ICasa } from './CasaSchema';
+import { model, Schema } from 'mongoose';
+import IEvento from '../interfaces/modelos/IEvento';
+import SchemaFoto from '../schemas/ScheemaFoto';
 
-export interface IEvento extends Document {
-	casa: [ICasa['_id']],
-	categorias: [ICategoria['_id']],
-	nome: String,
-	data: Date,
-	descricao: String,
-	descricao_curta?: String,
-	foto_principal?: IFoto,
-	fotos?: [IFoto],
-}
-
-const EventoScheema: Schema = new Schema(
+const Evento: Schema<IEvento> = new Schema(
 	{
 		casa: {
 			type: Schema.Types.ObjectId,
@@ -50,13 +38,13 @@ const EventoScheema: Schema = new Schema(
 			maxlength: [140, 'O campo descrição deve ter no maximo 140 caracteres'],
 		},
 		foto_principal: {
-			type: FotoSchema,
+			type: SchemaFoto,
 		},
-		fotos: [FotoSchema],
+		fotos: [SchemaFoto],
 	},
 	{
 		timestamps: true,
 	}
 );
 
-export default model('Evento', EventoScheema);
+export default model<IEvento>('Evento', Evento);

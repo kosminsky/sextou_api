@@ -1,12 +1,7 @@
-import { model, Schema, Document } from 'mongoose';
+import { model, Schema } from 'mongoose';
+import ICategoria from '../interfaces/modelos/ICategoria';
 
-export interface ICategoria extends Document {
-	nome: String,
-	descricao: String,
-	descricao_curta?: String,
-}
-
-const CategoriaSchema: Schema = new Schema(
+const CategoriaSchema: Schema<ICategoria> = new Schema(
 	{
 		nome: {
 			type: String,
@@ -31,4 +26,4 @@ const CategoriaSchema: Schema = new Schema(
 	}
 );
 
-export default model('Categoria', CategoriaSchema);
+export default model<ICategoria>('Categoria', CategoriaSchema);
