@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import IEndereco from '../interfaces/modelos/IEndereco';
+import IEndereco from '../../interfaces/models/IEndereco';
 
 const EnderecoSchema: Schema<IEndereco> = new Schema(
   {

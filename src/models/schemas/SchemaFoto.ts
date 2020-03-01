@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
-import IFoto from '../interfaces/modelos/IFoto';
+import IFoto from '../../interfaces/models/IFoto';
 
-const Foto: Schema<IFoto> = new Schema(
+const FotoSchema: Schema<IFoto> = new Schema(
 	{
 		link: {
 			type: String,
@@ -17,4 +17,4 @@ const Foto: Schema<IFoto> = new Schema(
 	}
 );
 
-export default Foto;
+export default FotoSchema;

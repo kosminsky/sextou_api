@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import BancoDeDados from './banco_de_dados';
+import BancoDeDados from './database';
 
 class App {
 

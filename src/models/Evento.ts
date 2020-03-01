@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
-import IEvento from '../interfaces/modelos/IEvento';
-import SchemaFoto from '../schemas/ScheemaFoto';
+import IEvento from '../interfaces/models/IEvento';
+import SchemaFoto from './schemas/SchemaFoto';
 
 const Evento: Schema<IEvento> = new Schema(
 	{

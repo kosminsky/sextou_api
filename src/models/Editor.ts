@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose';
-import IEditor from '../interfaces/modelos/IEditor';
+import IEditor from '../interfaces/models/IEditor';
 
 const Editor: Schema<IEditor> = new Schema(
 	{

@@ -1,7 +1,7 @@
 import { model, Schema } from 'mongoose';
-import ICasa from '../interfaces/modelos/ICasa';
-import SchemaFoto from '../schemas/ScheemaFoto';
-import EnderecoSchema from '../schemas/SchemaEndereco';
+import ICasa from '../interfaces/models/ICasa';
+import SchemaFoto from './schemas/SchemaFoto';
+import EnderecoSchema from './schemas/SchemaEndereco';
 
 const Casa: Schema<ICasa> = new Schema(
 	{

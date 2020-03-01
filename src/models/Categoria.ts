@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose';
-import ICategoria from '../interfaces/modelos/ICategoria';
+import ICategoria from '../interfaces/models/ICategoria';
 
 const CategoriaSchema: Schema<ICategoria> = new Schema(
 	{
