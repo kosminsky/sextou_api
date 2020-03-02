@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose';
+import MongooseUniqueValidator from 'mongoose-unique-validator';
 import IEditor from '../interfaces/models/IEditor';
 
 const Editor: Schema<IEditor> = new Schema(
@@ -49,6 +50,6 @@ const Editor: Schema<IEditor> = new Schema(
 	{
 		timestamps: true,
 	}
-);
+).plugin(MongooseUniqueValidator, { message: 'Esse {PATH} ja esta cadastrado' });
 
 export default model<IEditor>('Editor', Editor);

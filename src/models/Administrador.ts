@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose';
+import MongooseUniqueValidator from 'mongoose-unique-validator';
 import IAdministrador from '../interfaces/models/IAdministrador';
 
 const Administrador: Schema<IAdministrador> = new Schema(
@@ -49,6 +50,6 @@ const Administrador: Schema<IAdministrador> = new Schema(
 	{
 		timestamps: true,
 	}
-);
+).plugin(MongooseUniqueValidator, { message: 'Esse {PATH} ja esta cadastrado' });
 
 export default model<IAdministrador>('Administrador', Administrador);

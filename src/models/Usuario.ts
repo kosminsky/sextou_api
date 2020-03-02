@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose';
+import MongooseUniqueValidator from 'mongoose-unique-validator';
 import IUsuario from '../interfaces/models/IUsuario';
 
 const Usuario: Schema<IUsuario> = new Schema(
@@ -53,6 +54,6 @@ const Usuario: Schema<IUsuario> = new Schema(
 	{
 		timestamps: true,
 	}
-);
+).plugin(MongooseUniqueValidator, { message: 'Esse {PATH} ja esta cadastrado' });
 
 export default model<IUsuario>('Usuario', Usuario);
